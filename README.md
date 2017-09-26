@@ -154,7 +154,7 @@ We implemented a safety mechanism in the library in order to avoid any memory fo
 You can force a trace to bypass sampling. It is useful for tests but can also be useful if you want to trace specific requests depending on the context.
 
 ```csharp
-Trace.ForceSampled();
+trace.ForceSampled();
 ```
 
 If you want to do that in production, we highly recommend too wrap your [IZipkinSender](Src/zipkin4net/Src/Tracers/Zipkin/IZipkinSender.cs) implementation with the [RateLimiterZipkinSender](Src/zipkin4net/Src/Tracers/Zipkin/RateLimiterZipkinSender.cs). It will throttle traces based on a time-window pattern.
